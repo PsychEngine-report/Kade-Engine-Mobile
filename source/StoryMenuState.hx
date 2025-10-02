@@ -233,7 +233,15 @@ class StoryMenuState extends MusicBeatState
 
 		trace("Line 165");
 
+		addTouchPad("LEFT_FULL", "A_B_X_Y");
+
 		super.create();
+	}
+
+	override function closeSubState() {
+		persistentUpdate = true;
+		removeTouchPad();
+		addTouchPad("LEFT_FULL", "A_B_X_Y");
 	}
 
 	override function update(elapsed:Float)
